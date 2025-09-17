@@ -2,8 +2,8 @@
 package susemanager
 
 import (
-	sumamodels "mlmtool/pkg/models/susemanager"
-	"mlmtool/pkg/util/rest"
+	sumamodels "github.com/mbrookhuis/mlmapilib/pkg/models/susemanager"
+	"github.com/mbrookhuis/mlmapilib/pkg/util/rest"
 )
 
 // all public interface here for the model

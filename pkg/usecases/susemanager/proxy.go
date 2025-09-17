@@ -4,9 +4,9 @@ package susemanager
 import (
 	"fmt"
 
-	"mlmtool/pkg/util/logger"
+	"github.com/mbrookhuis/mlmapilib/pkg/util/logger"
 
-	"mlmtool/pkg/util/rest"
+	"github.com/mbrookhuis/mlmapilib/pkg/util/rest"
 )
 
 // SuMaAPI description for API call

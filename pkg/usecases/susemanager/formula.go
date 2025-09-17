@@ -3,13 +3,13 @@ package susemanager
 
 import (
 	"encoding/json"
-	log "mlmtool/pkg/util/logger"
+	log "github.com/mbrookhuis/mlmapilib/pkg/util/logger"
 	"net/http"
 
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 
-	returnCodes "mlmtool/pkg/util/returnCodes"
+	returnCodes "github.com/mbrookhuis/mlmapilib/pkg/util/returnCodes"
 )
 
 // GetSystemFormulaData - get formula data from system

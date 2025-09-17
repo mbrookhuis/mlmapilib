@@ -8,11 +8,11 @@ import (
 
 	"github.com/pkg/errors"
 
-	sumamodels "mlmtool/pkg/models/susemanager"
-	util "mlmtool/pkg/util/contains"
-	"mlmtool/pkg/util/logger"
-	"mlmtool/pkg/util/rest"
-	returnCodes "mlmtool/pkg/util/returnCodes"
+	sumamodels "github.com/mbrookhuis/mlmapilib/pkg/models/susemanager"
+	util "github.com/mbrookhuis/mlmapilib/pkg/util/contains"
+	"github.com/mbrookhuis/mlmapilib/pkg/util/logger"
+	"github.com/mbrookhuis/mlmapilib/pkg/util/rest"
+	returnCodes "github.com/mbrookhuis/mlmapilib/pkg/util/returnCodes"
 )
 
 // SuseManager - general information

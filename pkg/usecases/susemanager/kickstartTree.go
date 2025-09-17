@@ -6,10 +6,10 @@ import (
 	"errors"
 	"net/http"
 
+	sumamodels "github.com/mbrookhuis/mlmapilib/pkg/models/susemanager"
+	log "github.com/mbrookhuis/mlmapilib/pkg/util/logger"
+	returnCodes "github.com/mbrookhuis/mlmapilib/pkg/util/returnCodes"
 	"go.uber.org/zap"
-	sumamodels "mlmtool/pkg/models/susemanager"
-	log "mlmtool/pkg/util/logger"
-	returnCodes "mlmtool/pkg/util/returnCodes"
 )
 
 // KickstartTreeGetDetails - get autoinstall details

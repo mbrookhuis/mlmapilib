@@ -3,15 +3,13 @@ package logger
 import (
 	"fmt"
 	"io"
-	model "github.com/mbrookhuis/mlmapilib/pkg/models/inputfile"
 	"os"
 
+	model "github.com/mbrookhuis/mlmapilib/pkg/models/inputfile"
+
 	"github.com/sirupsen/logrus"
-	// "mlm-autoconfig/pkg/util/constants"
-	// ri "mlm-autoconfig/pkg/util/readconfig"
 	"strings"
 	"sync"
-	// "mlm-autoconfig/pkg/config" // Adjust import path
 )
 
 // Logger is the application's central logger.

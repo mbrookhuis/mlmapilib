@@ -4,11 +4,11 @@ package susemanager
 import (
 	"encoding/json"
 	"fmt"
-	log "mlmtool/pkg/util/logger"
+	log "github.com/mbrookhuis/mlmapilib/pkg/util/logger"
 
 	"go.uber.org/zap"
 
-	sumamodels "mlmtool/pkg/models/susemanager"
+	sumamodels "github.com/mbrookhuis/mlmapilib/pkg/models/susemanager"
 )
 
 // ConfigChannelListGlobals - list configchannels

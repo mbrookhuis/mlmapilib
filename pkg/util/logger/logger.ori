@@ -10,7 +10,7 @@ import (
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/natefinch/lumberjack.v2"
 
-	"mlmtool/pkg/config"
+	"github.com/mbrookhuis/mlmapilib/pkg/config"
 )
 
 func getJSONEncoderConfig() zapcore.EncoderConfig {

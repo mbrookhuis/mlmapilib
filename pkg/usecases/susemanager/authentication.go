@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	log "mlmtool/pkg/util/logger"
+	log "github.com/mbrookhuis/mlmapilib/pkg/util/logger"
 	"strings"
 
 	"go.uber.org/zap"

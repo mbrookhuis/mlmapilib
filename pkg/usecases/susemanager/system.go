@@ -5,14 +5,14 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	log "mlmtool/pkg/util/logger"
+	log "github.com/mbrookhuis/mlmapilib/pkg/util/logger"
 	"net/http"
 	"time"
 
 	"go.uber.org/zap"
 
-	sumamodels "mlmtool/pkg/models/susemanager"
-	returnCodes "mlmtool/pkg/util/returnCodes"
+	sumamodels "github.com/mbrookhuis/mlmapilib/pkg/models/susemanager"
+	returnCodes "github.com/mbrookhuis/mlmapilib/pkg/util/returnCodes"
 )
 
 // SystemGetID - get systemID from the given server

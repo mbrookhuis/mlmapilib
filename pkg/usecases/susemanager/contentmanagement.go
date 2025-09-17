@@ -5,9 +5,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	sumamodels "mlmtool/pkg/models/susemanager"
-	log "mlmtool/pkg/util/logger"
-	returnCodes "mlmtool/pkg/util/returnCodes"
+	sumamodels "github.com/mbrookhuis/mlmapilib/pkg/models/susemanager"
+	log "github.com/mbrookhuis/mlmapilib/pkg/util/logger"
+	returnCodes "github.com/mbrookhuis/mlmapilib/pkg/util/returnCodes"
 
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
