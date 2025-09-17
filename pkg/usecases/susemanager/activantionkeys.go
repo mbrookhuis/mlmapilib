@@ -6,11 +6,11 @@ import (
 	"fmt"
 	"net/http"
 
-	log "mlmtool/pkg/util/logger"
+	log "mlmapilib/pkg/util/logger"
 
 	"go.uber.org/zap"
 
-	_sumamodels "mlmtool/pkg/models/susemanager"
+	_sumamodels "github.com/mbrookhuis/mlmapilib/pkg/models/susemanager"
 )
 
 // ActivationKeyListActivationKeys - list all current available activation keys
