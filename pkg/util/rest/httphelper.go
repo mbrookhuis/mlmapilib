@@ -5,8 +5,8 @@ import (
 	"bytes"
 	"crypto/tls"
 	"fmt"
+	log "github.com/mbrookhuis/mlmapilib/pkg/util/logger"
 	"io"
-	log "mlmtool/pkg/util/logger"
 	"net/http"
 	"time"
 
