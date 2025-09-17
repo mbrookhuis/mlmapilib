@@ -3,7 +3,7 @@ package logger
 import (
 	"fmt"
 	"io"
-	model "mlmtool/pkg/models/inputfile"
+	model "github.com/mbrookhuis/mlmapilib/pkg/models/inputfile"
 	"os"
 
 	"github.com/sirupsen/logrus"

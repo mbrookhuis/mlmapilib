@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	log "mlmapilib/pkg/util/logger"
+	log "github.com/mbrookhuis/mlmapilib/pkg/util/logger"
 
 	"go.uber.org/zap"
 

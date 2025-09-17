@@ -1,6 +1,8 @@
 module mlmtool
 
-go 1.24
+go 1.24.0
+
+toolchain go1.24.3
 
 require (
 	github.com/mbrookhuis/mlmapilib v0.0.0-20250917190658-227dbff5da82
@@ -11,6 +13,6 @@ require (
 
 require (
 	github.com/stretchr/testify v1.11.1 // indirect
-	go.uber.org/multierr v1.10.0 // indirect
-	golang.org/x/sys v0.35.0 // indirect
+	go.uber.org/multierr v1.11.0 // indirect
+	golang.org/x/sys v0.36.0 // indirect
 )
