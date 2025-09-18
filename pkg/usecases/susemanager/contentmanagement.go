@@ -159,6 +159,46 @@ func (p *Proxy) ContentManagementAttachSource(auth AuthParams, projectLabel stri
 	return result, nil
 }
 
+// ContentManagementDetachSource - detach a source from a project
+//
+// param: auth
+// param: projectLabel
+// param: sourceType
+// param: sourceLabel
+// return:
+func (p *Proxy) ContentManagementDetachSource(auth AuthParams, projectLabel string, sourceType string, sourceLabel string) error {
+	log.Debug("contentManagement.source")
+	var result int
+	path := "contentmanagement/attachSource"
+	body, err := json.Marshal(map[string]any{"projectLabel": projectLabel, "sourceType": sourceType, "sourceLabel": sourceLabel})
+	if err != nil {
+		log.Error(returnCodes.ErrFailedMarshalling, zap.Any("error", err))
+		return errors.New(returnCodes.ErrFailedMarshalling)
+	}
+	response, err := p.suse.SuseManagerCall(body, http.MethodPost, auth.Host, path, auth.SessionKey)
+	if err != nil {
+		log.Error(returnCodes.ErrHTTPSuseManagerResponse, zap.Any("error", err))
+		return errors.New(returnCodes.ErrHandlingSuseManagerResponse)
+	}
+	if response.StatusCode == 200 {
+		resp, err := HandleSuseManagerResponse(response.Body)
+		if err != nil {
+			log.Error(returnCodes.ErrFailedMarshalling, zap.Any("error", err))
+			return errors.New(returnCodes.ErrHandlingSuseManagerResponse)
+		}
+		byteArray, _ := json.Marshal(resp)
+		err = json.Unmarshal(byteArray, &result)
+		if err != nil {
+			log.Error(returnCodes.ErrFailedUnMarshalling, zap.Any("error", err))
+			return errors.New(returnCodes.ErrFailedUnMarshalling)
+		}
+	} else {
+		log.Error(returnCodes.ErrHTTPSuseManagerResponse, zap.Any("HTTP Statuscode", response.StatusCode), zap.Any("HTTP body", response.Body))
+		return errors.New(returnCodes.ErrHTTPSuseManagerResponse)
+	}
+	return nil
+}
+
 // ContentManagementListFilters - list available filters for content management
 //
 // param: auth

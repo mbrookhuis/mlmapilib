@@ -79,31 +79,32 @@ type IProxy interface {
 	ConfigChannelListGlobals(auth AuthParams) ([]sumamodels.ConfigChannelListGlobals, error)
 
 	// contentmanagement
-	ContentManagementListProjects(auth AuthParams) ([]sumamodels.ContentManagementListProjects, error)
-	ContentManagementCreate(auth AuthParams, projectLabel string, name string, description string) (sumamodels.ContentManagementListProjects, error)
-	ContentManagementAttachSource(auth AuthParams, projectLabel string, sourceType string, sourceLabel string) (sumamodels.ContentManagementSource, error)
-	ContentManagementListFilters(auth AuthParams) ([]sumamodels.ContentManagementFilter, error)
-	ContentManagementCreateFilter(auth AuthParams, name string, rule string, entityType string, criteria sumamodels.FilterCriteria) (sumamodels.ContentManagementFilter, error)
 	ContentManagementAttachFilter(auth AuthParams, projectLabel string, filterID int) (sumamodels.ContentManagementFilter, error)
-	ContentManagementCreateEnvironment(auth AuthParams, projectLabel string, predecessorLabel string, envlabel string, name string, description string) (sumamodels.ContentManagementEnvironment, error)
+	ContentManagementAttachSource(auth AuthParams, projectLabel string, sourceType string, sourceLabel string) (sumamodels.ContentManagementSource, error)
 	ContentManagementBuildProject(auth AuthParams, projectLabel string) (int, error)
+	ContentManagementCreate(auth AuthParams, projectLabel string, name string, description string) (sumamodels.ContentManagementListProjects, error)
+	ContentManagementCreateEnvironment(auth AuthParams, projectLabel string, predecessorLabel string, envlabel string, name string, description string) (sumamodels.ContentManagementEnvironment, error)
+	ContentManagementCreateFilter(auth AuthParams, name string, rule string, entityType string, criteria sumamodels.FilterCriteria) (sumamodels.ContentManagementFilter, error)
+	ContentManagementDetachSource(auth AuthParams, projectLabel string, sourceType string, sourceLabel string) error
+	ContentManagementListFilters(auth AuthParams) ([]sumamodels.ContentManagementFilter, error)
+	ContentManagementListProjects(auth AuthParams) ([]sumamodels.ContentManagementListProjects, error)
 	ContentManagementLookupProject(auth AuthParams, project string) (sumamodels.ContentManagementListProjects, error)
 
 	// system
-	SystemGetID(auth AuthParams, systemName string) ([]sumamodels.System, error)
 	CheckProgress(auth AuthParams, actionID int, timeout int, action string, systemID int) (int, error)
 	ListCompleteSystem(auth AuthParams, actionID int) ([]interface{}, error)
 	ListInprogressSystem(auth AuthParams, actionID int) ([]interface{}, error)
 	ListLatestInstallablePackages(auth AuthParams, systemID int) ([]sumamodels.InstallablePackage, error)
 	SchedulePackageRefresh(auth AuthParams, systemID int) error
 	ScheduleScriptRun(auth AuthParams, systemID int, timeout int, script string) error
+	SystemGetID(auth AuthParams, systemName string) ([]sumamodels.System, error)
 	SystemGetScriptResult(auth AuthParams, actionID int, resultCompleted int) (string, error)
+	SystemGetSubscribedBaseChannel(auth AuthParams, systemID int) (sumamodels.SubscribedBaseChannel, error)
 	SystemListActiveSystems(auth AuthParams) ([]sumamodels.ActiveSystem, error)
 	SystemListInstalledPackages(auth AuthParams, systemID int) ([]sumamodels.InstalledPackage, error)
 	SystemScheduleApplyHighstate(auth AuthParams, systemID int, timeout int) error
 	SystemScheduleApplyStates(auth AuthParams, systemID int, stateNames []string, timeout int) error
 	SystemScheduleChangeChannels(auth AuthParams, systemID int, basechannel string, childChannel []sumamodels.ChannelSoftwareListChildren) error
-	SystemGetSubscribedBaseChannel(auth AuthParams, systemID int) (sumamodels.SubscribedBaseChannel, error)
 	SystemScheduleReboot(auth AuthParams, systemID int, timeout int) error
 
 	// sync
